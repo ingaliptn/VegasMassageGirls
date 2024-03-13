@@ -1,0 +1,7 @@
+- Страницы которые на поlдоменах нужно перенести на основной домен и настроить 301 перенаправление:
+https://bodyrubs.vegasmassagegirls.com/ >>> 301 >>> https://www.vegasmassagegirls.com/body-rubs.php
+https://happyending.vegasmassagegirls.com/ >>> 301 >>> https://www.vegasmassagegirls.com/happy-ending-massage.php
+https://inroom.vegasmassagegirls.com/ >>> 301 >>> https://www.vegasmassagegirls.com/inroom-massage.php
+https://tantra.vegasmassagegirls.com/ >>> 301 >>> https://www.vegasmassagegirls.com/tantra-massage.php
+
+- навигация должна временно остаться такая как на основном домене - со ссвлками на поддомены. Позже ссылки на поддомены нужно будет заменить на актуальные

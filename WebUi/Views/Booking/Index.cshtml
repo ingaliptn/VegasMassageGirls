@@ -1,0 +1,232 @@
+﻿@model WebUi.Controllers.BookingViewModel
+
+@{
+    ViewData["Title"] = "Booking Page";
+}
+
+<div class="main_container_block escorts_display_page">
+    @*<div class="breadcums_block" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+        <ol class="breadcrumb">
+            <li><a itemprop="url" href="/"><span itemprop="title">Home</span></a></li>
+            <li class="active"><span itemprop="title">Booking</span></li>
+        </ol>
+    </div>*@
+    <div class="breadcums_block">
+        <ol class="breadcrumb">
+            <li><a href="/">Erotic Massage</a></li>
+            <li class="active">Booking</li>
+        </ol>
+    </div>
+
+    <div class="main_container_block escorts_profile_container">
+        <h1 class="heading">Booking</h1>
+        <div class="container_area border_radius bg_boston" style="padding: 20px 20px 30px;">
+            <script type="text/javascript">
+                function validate() {
+                    if (document.booking.firstname.value == "") {
+                        alert("Please provide your first name!");
+                        document.booking.firstname.focus();
+                        return false;
+                    }
+                    if (document.booking.lastname.value == "") {
+                        alert("Please provide your last name!");
+                        document.booking.lastname.focus();
+                        return false;
+                    }
+                    if (document.booking.hotelname.value == "") {
+                        alert("Please provide your hotel name!");
+                        document.booking.hotelname.focus();
+                        return false;
+                    }
+                    if (document.booking.hotelroom.value == "") {
+                        alert("Please provide your hotel room number!");
+                        document.booking.hotelroom.focus();
+                        return false;
+                    }
+                    if (document.booking.email.value == "") {
+                        alert("Please provide your email!");
+                        document.booking.email.focus();
+                        return false;
+                    }
+                    if (document.booking.phone.value == "") {
+                        alert("Please provide your phone number!");
+                        document.booking.phone.focus();
+                        return false;
+                    }
+                }
+            </script>
+            <script type="text/javascript" src="js/jquery.validate.min.js"></script>
+            <script type="text/javascript" src="js/jquery.placeholder.min.js"></script>
+            <script type="text/javascript" src="js/booking.js"></script>
+            <div class="common_page_container">
+                <div class="booking_panel">
+                    <form class="form-horizontal" method="post" name="booking" id="booking"
+                          asp-controller="Booking" asp-action="ThankYou"
+                          onsubmit="return(validate());" novalidate="novalidate">
+                        <div class="form-group">
+                            <label for="" class="col-sm-4 control-label custom_label_text">
+                                Preferred
+                                Escort
+                            </label>
+                            <div class="col-sm-8">
+                                <select name="escortname" class="form-control custom_box"
+                                        onchange="this.form.submit()">
+                                    <option value="">--select--</option>
+                                    @foreach (var p in Model.List)
+                                    {
+                                        <option value="@p.Id">@p.EscortName</option>
+                                    }
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="" class="col-sm-4 control-label custom_label_text">
+                                Alternate
+                                Escort
+                            </label>
+                            <div class="col-sm-8">
+                                <select name="escortname1" class="form-control custom_box" onchange="this.form.submit()">
+                                    <option value="">--select--</option>
+                                    @foreach (var p in Model.List)
+                                    {
+                                        <option value="@p.Id">@p.EscortName</option>
+                                    }
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="" class="col-sm-4 control-label custom_label_text">
+                                First Name <span class="required">*</span>
+                            </label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control custom_box" id="firstname"
+                                       placeholder="" name="firstname">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="" class="col-sm-4 control-label custom_label_text">
+                                Last Name <span class="required">*</span>
+                            </label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control custom_box" id="lastname"
+                                       placeholder="" name="lastname">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="" class="col-sm-4 control-label custom_label_text">
+                                Hotel Name <span class="required">*</span>
+                            </label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control custom_box" id="hotelname"
+                                       placeholder="" name="hotelname">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="" class="col-sm-4 control-label custom_label_text">
+                                Room Number <span class="required">*</span>
+                            </label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control custom_box" id="hotelroom"
+                                       placeholder="" name="hotelroom">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="" class="col-sm-4 control-label custom_label_text">
+                                Email <span class="required">*</span>
+                            </label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control custom_box" id="email" placeholder=""
+                                       name="email">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="" class="col-sm-4 control-label custom_label_text">
+                                Phone No. <span class="required">*</span>
+                            </label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control custom_box" id="phone" placeholder=""
+                                       name="phone">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="" class="col-sm-4 control-label custom_label_text">
+                                Special
+                                Request
+                            </label>
+                            <div class="col-sm-8">
+                                <textarea type="text" class="form-control custom_box" id="request" rows="4"
+                                          name="request"></textarea>
+                            </div>
+                        </div>
+                        @*<div class="form-group">
+                                <label for="request" class="col-sm-4 control-label custom_label_text"></label>
+                                <div class="col-sm-8">
+                                    <span id="spambot">(Are you human, or spambot?)</span>
+                                    <input id="num1" name="num1" readonly="readonly"
+                                           class="sum form-control custom_box" style="color:#fff; width:50%"
+                                           value="2"> <span style="color:#fff;">+</span>
+                                    <input id="num2" name="num2" readonly="readonly"
+                                           class="sum form-control custom_box" style="color:#fff; width:50%"
+                                           value="7"> <span style="color:#fff;">=</span>
+                                    <input type="text" name="captcha" id="captcha"
+                                           class="captcha form-control custom_box" style="color:#fff; width:50%"
+                                           maxlength="2">
+                                </div>
+                            </div>*@
+                        <div class="form-group">
+                            <div class="col-sm-offset-4 col-sm-8">
+                                <input type="submit" name="submit" class="btn vignate_color" value="Submit">
+                            </div>
+                        </div>
+                    </form>
+                    <style>
+                        .error {
+                            color: #fff;
+                        }
+
+                        #spambot {
+                            color: #fff;
+                        }
+                    </style>
+                    <script type="text/javascript">
+                        //$.validator.addMethod('captcha',
+                        //    function (value) {
+                        //        $result = (parseInt($('#num1').val()) + parseInt($('#num2').val()) == parseInt($('#captcha').val()));
+                        //        $('#spambot').fadeOut('fast');
+                        //        return $result;
+                        //    },
+                        //    'Incorrect value, please try again.'
+                        //);
+                        $('#booking').validate({
+                            debug: false,
+                            rules: {
+                                message: {
+                                    required: true,
+                                    minlength: 10,
+                                    maxlength: 255
+                                },
+                                captcha: {
+                                    required: true,
+                                    captcha: true
+                                }
+                            },
+                            messages: {
+                                fullname: "First name field required.",
+                                lastname: "Last name field required.",
+                                hotelname: "Hotel name field required.",
+                                hotelroom: "Hotel room number field required.",
+                                email: {
+                                    required: "Email address required",
+                                    email: "Email address must be in the format name@domain.com."
+                                },
+                                chkCaptcha: {
+                                    required: "* Required"
+                                }
+                            }
+                        });
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

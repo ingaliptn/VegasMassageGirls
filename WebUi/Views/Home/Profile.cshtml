@@ -1,0 +1,116 @@
+﻿@using Domain.Models
+@model WebUi.Models.ProfileViewModel
+
+@{
+    ViewData["Title"] = "Profile Page";
+}
+
+<div class="main_container_block escorts_display_page">
+    <div class="breadcums_block">
+        <ol class="breadcrumb">
+            <li><a href="/">Erotic Massage</a></li>
+            <li class="active">@Model.EscortName</li>
+        </ol>
+    </div>
+
+    <div class="main_container_block escorts_profile_container">
+        <h1 class="heading">@Model.EscortName</h1>
+        <div class="container_area border_radius bg_boston" style="padding: 20px 20px 30px;">
+            <div class="row">
+                <div class="col-sm-7 col-md-7 col-lg-7">
+                    <div class="profile_photo_display_block">
+                        <div class="profile_preview_img">
+                            <img class="img-responsive" src="~/images/escorts/@Model.FileImages.First().FileName" alt="" title="">
+                        </div>
+                        <div class="thumb_img">
+                            @foreach (var p in @Model.FileImages)
+                            {
+                                <a class="fancybox" data-fancybox-group="escorts"
+                                   href="~/images/escorts/@p.FileName">
+                                    <img src="~/images/escorts/@p.FileName" alt="@Model.EscortName"
+                                         title="@Model.EscortName" width="89" class="img-responsive">
+                                </a>
+                            }
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-5 col-md-5 col-lg-5">
+                    <div class="profile_information">
+                        <table class="table">
+                            <tbody>
+                                <tr>
+                                    <td width="50%"><span>Name:</span></td>
+                                    <td width="50%">@Model.EscortName</td>
+                                </tr>
+                                <tr>
+                                    <td><span>Age:</span></td>
+                                    <td>@Model.Age</td>
+                                </tr>
+                                <tr>
+                                    <td><span>Height:</span></td>
+                                    <td>@Model.Height</td>
+                                </tr>
+                                <tr>
+                                    <td><span>Weight:</span></td>
+                                    <td>@Model.Weight</td>
+                                </tr>
+                                <tr>
+                                    <td><span>Bust:</span></td>
+                                    <td>@Model.Statistics</td>
+                                </tr>
+                                <tr>
+                                    <td><span>Hair:</span></td>
+                                    <td>@Model.Hair</td>
+                                </tr>
+                                <tr>
+                                    <td><span>Languages:</span></td>
+                                    <td>@Model.Languages</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="agent_phone">
+                        <h3>Services:</h3> <p style="font-size:18px;">@Model.Section</p>
+                    </div>
+                    <div class="agent_phone">
+                        <h3>Phone:</h3> <a href="tel:@Constants.SitePhoneRef">@Constants.SitePhone</a>
+                    </div>
+                    <div class="booking_block_tab">
+                        <h2>Booking</h2>
+                        <a href="./booking.php" class="btn vignate_color escorts_details_btn details_btn">BOOK HER NOW</a>
+                    </div>
+                </div>
+            </div>
+            <div class="about_escorts" style="color: whitesmoke">
+                <p></p>
+                @Html.Raw(@Model.Description)
+                <p></p>
+            </div>
+            <div class="row">
+                <div class="main_container featured_escort">
+                    <div class="see_also_block">
+                        <h2><span>See</span> Also</h2>
+                    </div>
+
+                    @foreach (var p in Model.List)
+                    {
+                        var fileName = p.FileImages.First().FileName;
+                        var refName = $"{p.EscortName.ToLower()}.php";
+                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                            <div class="escort_display">
+                                <div class="image_wrapper">
+                                    <a href="/@refName">
+                                        <div class="escort_img">
+                                            <img class="img-responsive" src="~/images/escorts/@fileName" alt="" title="">
+                                        </div>
+                                        <div class="escort_name">@p.EscortName</div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

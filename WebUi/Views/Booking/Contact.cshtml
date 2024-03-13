@@ -1,0 +1,149 @@
+﻿@using Domain.Models
+@{
+    ViewData["Title"] = "Contact Us Page";
+}
+
+<div class="main_container_block escorts_display_page">    
+    <div class="breadcums_block">
+        <ol class="breadcrumb">
+            <li><a href="/">Erotic Massage</a></li>
+            <li class="active">Contact Us</li>
+        </ol>
+    </div>
+
+    <div class="main_container_block escorts_profile_container">
+        <h1 class="heading">Contact Us</h1>
+        <div class="container_area border_radius bg_boston" style="padding: 20px 20px 30px;">  
+            <p>We are open 7 days a week 24 hour a day.</p><br>
+            <p>Phone: 702-766-7988</p><br>
+
+            <p>Contact us by filling the form below:</p><br>
+            <script type="text/javascript">
+                function validate() {
+                    if (document.contactus.name.value == "") {
+                        alert("Please provide your name!");
+                        document.contactus.name.focus();
+                        return false;
+                    }
+                    if (document.contactus.email.value == "") {
+                        alert("Please provide your valid email!");
+                        document.contactus.email.focus();
+                        return false;
+                    }
+                    if (document.contactus.message.value == "") {
+                        alert("Please provide your message!");
+                        document.contactus.message.focus();
+                        return false;
+                    }
+                }
+            </script>
+            <script type="text/javascript" src="js/jquery.validate.min.js"></script>
+            <script type="text/javascript" src="js/jquery.placeholder.min.js"></script>
+            <script type="text/javascript" src="js/contact.js"></script>
+            <div class="common_page_container">
+                <div class="row">
+                    <div class="col-sm-6 col-md-6 col-lg-6">
+                        <div class="booking_panel contact_page_feedback">
+                            <form class="form-horizontal" id="contactus" method="post" name="contactus"
+                                  asp-controller="Booking" asp-action="ThankYouContact" enctype="multipart/form-data"
+                                  accept-charset="UTF-8" onsubmit="return(validate());"
+                                  novalidate="novalidate">
+                                <div class="form-group">
+                                    <label for="" class="col-sm-4 control-label custom_label_text">
+                                        Name
+                                    </label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control custom_box" id="name"
+                                               placeholder="" name="name">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="" class="col-sm-4 control-label custom_label_text">
+                                        Email
+                                    </label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control custom_box" id="email"
+                                               placeholder="" name="email">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="" class="col-sm-4 control-label custom_label_text">
+                                        Subject
+                                    </label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control custom_box" id="subject"
+                                               placeholder="" name="subject">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="" class="col-sm-4 control-label custom_label_text">
+                                        Your
+                                        Message
+                                    </label>
+                                    <div class="col-sm-8">
+                                        <textarea type="text" class="form-control custom_box" id="message"
+                                                  rows="4" name="message"></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-offset-4 col-sm-8">
+                                        <input type="submit" name="submit" class="btn vignate_color"
+                                               value="Submit">
+                                    </div>
+                                </div>
+                            </form>
+                            <style>
+                                .error {
+                                    color: #fff;
+                                }
+
+                                #spambot {
+                                    color: #fff;
+                                }
+                            </style>
+                            <script type="text/javascript">
+                                //$.validator.addMethod('captcha',
+                                //    function (value) {
+                                //        $result = (parseInt($('#num1').val()) + parseInt($('#num2').val()) == parseInt($('#captcha').val()));
+                                //        $('#spambot').fadeOut('fast');
+                                //        return $result;
+                                //    },
+                                //    'Incorrect value, please try again.'
+                                //);
+                                $('#contactus').validate({
+                                    debug: false,
+                                    rules: {
+                                        message: {
+                                            required: true,
+                                            minlength: 10,
+                                            maxlength: 255
+                                        },
+                                        captcha: {
+                                            required: true,
+                                            captcha: true
+                                        }
+                                    },
+                                    messages: {
+                                        fullname: "First name field required.",
+                                        subject: "Hotel room number field required.",
+                                        email: {
+                                            required: "Email address required",
+                                            email: "Email address must be in the format name@domain.com."
+                                        },
+                                        chkCaptcha: {
+                                            required: "* Required"
+                                        }
+                                    }
+                                });
+                            </script>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-6 col-lg-6"></div>
+                    <div col-sm-12>
+                        <p>If you get massage from one of our girls, you will have a great experience as the fatigue leaves your muscles, your mind and your spirit. You will find yourself relaxing and letting go of every pressure that had accumulated from the hustles and stresses of daily life. With time, an open atmosphere is cultivated where you can engage in conversation about anything and everything under the sun. You will be surprised at how knowledgeable the massage girls will be because atVegasMassageGirls, we only pick the best of the best. Coming to us will be the perfect escapade. Let the expert hands and fingers knead the stress out of your tired bones. Call us, or just walk in for a massage.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

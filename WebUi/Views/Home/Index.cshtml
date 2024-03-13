@@ -1,0 +1,74 @@
+﻿@model WebUi.Controllers.HomeViewModel
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<style>
+    .name-escort {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 14px;
+        text-align: left;
+        color: #FFF;
+        display: block;
+        padding-bottom: 3px;
+    }
+</style>
+
+<div class="static_banner_part">
+    <div class="static_banner_content">
+        <h1 class="heading">@Model.PositionHomeTopTitle</h1>    
+    </div>
+</div>
+
+@if (Model.PositionHomeTop != null && !string.IsNullOrEmpty(Model.PositionHomeTop))
+{
+    <div class="site_information_top">
+        <div class="container_area border_radius bg_boston">
+            @Html.Raw(Model.PositionHomeTop)
+        </div>
+    </div>
+}
+
+
+<div class="main_container_block escorts_display_page">
+    <div class="container_area border_radius bg_boston">
+        <div class="escorts_display_block display_block">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="row">
+                        <ul id="portfolio-list1">
+                            @foreach (var p in Model.List)
+                            {
+                                var refName = $"{p.EscortName.ToLower()}.php";
+                                var fileName = p.FileImages.First().FileName;
+                                <li style="display: block;" class="@p.Section">
+                                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                                        <div class="display escort_display">
+                                            <div class="girl_pic_block escorts_pic_block pic_block">
+                                                <a href="/@refName">
+                                                    <img class="img-responsive" src="~/images/escorts/@fileName"
+                                                         alt="@p.EscortName" title="@p.EscortName">
+                                                </a>
+                                                <div class="portfolio_description escort_description description clearfix">
+                                                    <div class="name-escort escorts_name portfolio_name name">@p.EscortName</div>
+                                                    <a href="/@refName"
+                                                       class="btn massage_color pull-right escorts_details_btn">
+                                                        Details
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            }
+                        </ul>
+                    </div>
+                </div>  
+            </div>
+            <div class="custom_content_block clearfix">
+                @Html.Raw(Model.PositionHomeBottom)
+            </div>
+        </div>
+    </div>
+</div>

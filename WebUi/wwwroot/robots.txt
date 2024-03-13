@@ -1,0 +1,24 @@
+User-agent: *
+
+Allow: /*.js
+Allow: /*.css
+Allow: /*.jpg
+Allow: /*.gif
+Allow: /*.png
+Allow: /fancybox
+Allow: /fonts
+Disallow: /Connections
+Disallow: /docs
+Disallow: /include
+Disallow: /inventory
+Disallow: /404.php
+Disallow: /class.phpmailer.php
+Disallow: /class.pop3.php
+Disallow: /class.smtp.php
+Disallow: /gallery.php
+Disallow: /send_booking.php
+Disallow: /send_contact.php
+Disallow: /send_join.php
+Disallow: /thankyou.php
+
+Sitemap: http://www.vegasmassagegirls.com/sitemap.xml

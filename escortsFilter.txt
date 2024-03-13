@@ -1,0 +1,29 @@
+asian-escorts.php
+Nationality == "Asian"
+
+bbw-escorts.php
+Statistics == "D-Cup"
+
+cheap-escorts.php
+Statistics == "C-Cup" && Hair == "Blonde"
+
+ebony-escorts.php
+Statistics == "C-Cup" && Hair == "Black"
+
+gfe-escorts.php
+z.Statistics == "B-Cup" && z.Age < 22
+
+latina-escorts.php
+Nationality == "Latina"
+
+mature-escorts.php
+Age >= 30
+
+girlfriend-experience.php
+? as gfe-escorts.php
+
+busty-escorts.php
+?
+
+black-escorts.php
+?

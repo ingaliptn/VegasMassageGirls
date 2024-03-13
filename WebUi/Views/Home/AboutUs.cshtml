@@ -1,0 +1,19 @@
+﻿@model WebUi.Controllers.AboutUsViewModel
+
+@{
+    ViewData["Title"] = "About Us Page";
+}
+
+<div class="main_container_block escorts_display_page"> 
+    <div class="breadcums_block">
+        <ol class="breadcrumb">
+            <li><a href="/">Erotic Massage</a></li>
+            <li class="active">About Us</li>
+        </ol>
+    </div>
+
+    <div class="main_container_block escorts_profile_container">
+        <h1 class="heading">@Model.PositionAbout</h1>
+        @Html.Raw(Model.SiteDescriptionAbout)
+    </div>
+</div>

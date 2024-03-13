@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Entities\Message.cs" />
+    <Compile Remove="Entities\Voice.cs" />
+    <Compile Remove="Repositories\Concrete\EfMessageRepository.cs" />
+    <Compile Remove="Repositories\Concrete\EfProductRepository.cs" />
+    <Compile Remove="Entities\Product.cs" />
+    <Compile Remove="Repositories\Concrete\EfVoiceRepository.cs" />
+    <Compile Remove="Repositories\IMessageRepository.cs" />
+    <Compile Remove="Repositories\IProductRepository.cs" />
+    <Compile Remove="Repositories\IVoiceRepository.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer.Design" Version="2.0.0-preview1-final" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+</Project>

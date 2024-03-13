@@ -1,0 +1,140 @@
+﻿@model WebUi.Controllers.EscortsViewModel
+
+@{
+    ViewData["Title"] = "Escorts Page";
+}
+
+<div class="main_container_block escorts_display_page">
+    @*<div class="breadcums_block" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+        <ol class="breadcrumb">
+            <li><a itemprop="url" href="/"><span itemprop="title">Home</span></a></li>
+            <li class="active"><span itemprop="title">@Model.EscortsNavTitle</span></li>
+        </ol>
+    </div>*@       
+    <div class="breadcums_block">
+        <ol class="breadcrumb">
+            <li><a href="/">Home</a></li>
+            <li class="active">@Model.EscortsNavTitle</li>
+        </ol>
+    </div>
+
+
+    @*<h1 class="heading">@Model.EscortsHeading</h1>*@
+
+    <div class="container_area border_radius bg_boston">
+
+        <div class="custom_content_block clearfix">
+            @Html.Raw(Model.PositionEscortsTop)
+        </div>
+
+        <div class="escorts_display_block">
+            <div class="row">
+                <div class="col-sm-8 col-md-8 col-lg-9">
+                    <div class="row">
+                        <ul id="portfolio-list1">
+                            @foreach (var p in Model.List)
+                            {
+                                var refName = $"{p.EscortName.ToLower()}.php";
+                                var fileName = p.FileImages.First().FileName;
+                                <li style="display: block;" class="@p.Section">
+                                    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                                        <div class="display escort_display">
+                                            <div class="girl_pic_block escorts_pic_block pic_block">
+                                                <a href="/@refName">
+                                                    <img class="img-responsive" src="~/images/escort_pic/@fileName"
+                                                         alt="@p.EscortName" title="@p.EscortName">
+                                                </a>
+                                                <div class="portfolio_description escort_description description clearfix">
+                                                    <div class="name-escort escorts_name portfolio_name name">@p.EscortName</div>
+                                                    <a href="/@refName/"
+                                                       class="btn vignate_color pull-right women_details_btn escorts_details_btn boston_color details_btn">
+                                                        Details
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            }
+                        </ul>
+                    </div>
+
+                    @*<div class="custom_content_block clearfix">
+                        @Html.Raw(Model.PositionEscortsBottom)
+                    </div>*@
+
+                </div>
+               
+                @if (Model.List.Count > 0)
+                {
+                    <div class="col-sm-4 col-md-4 col-lg-3">
+                        <div class="advance_filter_container">
+                            <h3 class="vignate_color">Advance Filter</h3>
+                            <div class="advance_filter_block">
+                                <h5>Age</h5>
+                                <div class="filter_option">
+                                    <ul id="portfolio-filter" style="margin-top: 5px !important;">
+                                        <li><a href="#20-23" title="" rel="20-23">20-23</a></li>
+                                        <li><a href="#24-27" title="" rel="24-27">24-27</a></li>
+                                        <li><a href="#28-30" title="" rel="28-30">28-30</a></li>
+                                        <li><a href="#all" title="" class="current">All</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="advance_filter_block">
+                                <h5>Bust</h5>
+                                <div class="filter_option">
+                                    <ul id="portfolio-filter" style="margin-top: 5px !important;">
+                                        <li><a href="#1" title="" rel="1">1</a></li>
+                                        <li><a href="#2" title="" rel="2">2</a></li>
+                                        <li><a href="#3" title="" rel="3">3</a></li>
+                                        <li><a href="#4-5" title="" rel="4-5">4-5</a></li>
+                                        <li><a href="#all" title="">All</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="advance_filter_block">
+                                <h5>Height</h5>
+                                <div class="filter_option">
+                                    <ul id="portfolio-filter" style="margin-top: 5px !important;">
+                                        <li><a href="#50-55" title="" rel="50-55">5'0"-5'5"</a></li>
+                                        <li><a href="#56-58" title="" rel="56-58">5'6"-5'8"</a></li>
+                                        <li><a href="#59-6" title="" rel="59-6">5'9"-6'+</a></li>
+                                        <li><a href="#all" title="">All</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="advance_filter_block">
+                                <h5>Weight</h5>
+                                <div class="filter_option">
+                                    <ul id="portfolio-filter" style="margin-top: 5px !important;">
+                                        <li><a href="#80-100" title="" rel="80-100">80-100</a></li>
+                                        <li><a href="#101-120" title="" rel="101-120">101-120</a></li>
+                                        <li><a href="#121-140" title="" rel="121-140">121-140</a></li>
+                                        <li><a href="#141-160" title="" rel="141-160">141-160</a></li>
+                                        <li><a href="#all" title="">All</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="advance_filter_block">
+                                <h5>Hair Color</h5>
+                                <div class="filter_option">
+                                    <ul id="portfolio-filter" style="margin-top: 5px !important;">
+                                        <li><a href="#Black" title="" rel="Black">Black</a></li>
+                                        <li><a href="#Brunette" title="" rel="Brunette">Brunette</a></li>
+                                        <li><a href="#Blonde" title="" rel="Blonde">Blonde</a></li>
+                                        <li><a href="#all" title="">All</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+                
+                <div class="col-sm-12">
+                    @Html.Raw(Model.PositionEscortsBottom)
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

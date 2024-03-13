@@ -1,0 +1,93 @@
+﻿@model WebUi.Controllers.MassageViewModel
+
+@{
+    ViewData["Title"] = "Blog Page";
+}
+
+<div class="main_container_block escorts_display_page">
+
+    <div class="breadcums_block">
+        <ol class="breadcrumb">
+            <li><a title="Erotic massage" href="/"><span>Home</span></a></li>
+            <li><a title="Erotic Massage Blog" href="/blog/"><span>Blog</span></a></li>
+            <li class="active"><span>Couples Massage</span></li>
+        </ol>
+    </div>
+
+
+    <h1 class="heading">Las Vegas massage for couples</h1>
+
+    <div class="container_area border_radius bg_boston">
+        <div class="common_page_container clearfix">
+            <div class="video_block">
+                <img src="/images/promo.jpg" alt="" title="" class="img-responsive">
+            </div>
+            <!-- <img src="/images/content_img/couples-1.jpg" alt="" title="" class="img-responsive content_img" /> -->
+            <p>We know that things might get boring especially if you are in a long term relationship. Hence, you should try to spice up things by doing some fun stuff, like getting a couples massage Las Vegas. Yeah, Vegas is the only place where you can be wild and free without worrying about your home or family. You can just be with your partner and spend a nice weekend and spend some money on gambling and getting couples massage. People go for such massage sessions, but they indulge in couples massage, because they want privacy in their life, and that’s the reason why all the problem starts.</p><br>
+            <p>You should not be hiding anything from your partner and that’s the first rule of being in a relationship. If you are planning a nice weekend then you should really opt for getting a nice couples massage and you are not going to believe how amazing it will be for you and your partner. Both of you are going to enjoy this amazing art, and your relationship will see a new light of day. Massage for couples in Las Vegas is not very expensive to get and hence you can easily afford it without any problems. Before making a decision you should come to VegasMessageGirls, because we are one of the oldest operating agency in Vegas and we provide wonderful and sexy masseuses for a hot and erotic couples massage.</p><br>
+            <h3>Choose your masseuse</h3><br>
+
+            @foreach (var p in Model.List)
+            {
+                var refName = $"{p.EscortName.ToLower()}.php";
+                var fileName = p.FileImages.First().FileName;
+              
+                <div class="col-xs-12 col-sm-4 col-md-4 col-lg-3">
+                    <div class="escort_display">
+                        <div class="escorts_pic_block">
+                            <a href="/@refName">
+                                <img class="img-responsive" src="~/images/escorts/@fileName"
+                                     alt="@p.EscortName" title="@p.EscortName">
+                            </a>
+                            <div class="escort_description clearfix">
+                                <div class="escorts_name">@p.EscortName</div>
+                                <a href="/@refName" class="btn massage_color pull-right escorts_details_btn">Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }   
+
+            <h2>What makes us so damn good</h2><br>
+            <p>We won’t deny that there aren’t many agencies who are providing the same services, but there is a difference between them and us. We have been in this field since a long time and we know what works best for our cli-ents. Moreover, we always ensure that our service providers are doing a great job. Some of the most im-portant things to know about us are listed below and we really hope that you enjoy couples massage Las Vegas:</p><br>
+            <div class="video_block">
+                <img src="/images/content_img/couples-2.jpg" alt="" title="" class="img-responsive">
+            </div>
+            <ol class="unorder_list">
+                <li>We have the most amazing masseuses working with us;</li>
+                <li>Most of them are from Asian countries who master this art form;</li>
+                <li>Couples massage is kind of a therapy that improves things in a relationship;</li>
+                <li>Our agency is one of the oldest in Vegas;</li>
+                <li>We can provide you whatever you need within the quickest time.</li>
+            </ol>
+            <h2>Our services speak for the quality we provide</h2><br>
+            <p>We understand when couples are seeking a couples massage, then they don’t care about money too much, but they do care about the quality, hence we always ensure that we are providing elite massage for couples in Las Vegas. We have worked really hard to ensure that our clients are getting the best from us. There are lots of masseuses listed on our website who can provide massage to both the partners, and that’s not all, both of you get the opportunity to explore erotic times with your hired masseuses. You are not going to believe how sexy and romantic this can be and how wonderful it can be for your relationship. You will find new foundations on which you can build your future together. Some of the benefits of couples massage are listed below:</p><br>
+            <ol class="unorder_list">
+                <li>As a couple you get to experience something new together;</li>
+                <li>The bond gets stronger when you experience something like couples massage;</li>
+                <li>You will have a great time during the couples massage;</li>
+                <li>Consider this as a therapy for couples, but with more pleasure;</li>
+                <li>It's really inexpensive to hire masseuses for couples massage.</li>
+            </ol>
+            <p>Las Vegas is the only city where you can do anything without worrying about your work or anything else. As they say that what happens in Vegas stays in Vegas.  Vegas is the only place where not just men, but women also come to enjoy a nice time, and if you are a couple then you should definitely try couples mas-sage Las Vegas, which is the best option to enjoy as a couple.</p><br>
+
+            <h2>Try us and we guarantee you are going to come back for more</h2><br>
+            <div class="video_block">
+                <img src="/images/content_img/couples-3.jpg" alt="" title="" class="img-responsive">
+            </div>
+            <p>The greatest thing about the services we provide, is the fact that we always concentrate on the quality rather than the money we can earn. Our business model is really simple and straight forward, just provide high quality masseuses and business will be booming. Vegas gets tons of tourists every month and most of them are couples who are looking to enjoy their vacation. There is nothing better than couples massage. This mas-sage will not just rejuvenate your body but it will ensure that both the partners are getting satisfied equally.</p><br>
+            <p>At VegasMassageGirls, you will be getting really hot and sexy masseuses who are always willing to do things that others won’t agree to. Moreover, they are really compatible with couples and they know how to get things started without making anyone uncomfortable. Couples massage Las Vegas is only good when there is an understanding between the couples and the masseuses, and this is why experienced and profes-sional masseuses are always preferred over amateur ones.</p><br>
+            <p>If you are in Las Vegas to experience something wild and amazing at the same time, then we would suggest that you contact us right now and let our wild masseuses take care of your desires. This would be one hell of an experience for you and couples who think that their life is getting monotonous because they are not hav-ing enough spice in their life should always try these things. We guarantee that once you try it, you will defi-nitely be much happier than ever and you will fall in love with the services we are providing.</p><br>
+            <p>So, if you want the best massage for couples in Las Vegas, then come to us and we guarantee you a great time. We have the experts to provide you the best services within the most reasonable price, and you are go-ing to feel damn amazing after you have experienced this massage. Its like a couples therapy but with lots of pleasure included.</p><br>
+
+            <br>
+            <h2>Contact us:</h2><br>
+            <p>We are open 7 days a week 24 hour a day.</p><br>
+            <p>Phone: 702-766-7988</p><br>
+            <p>Online <a title="Vegas Massage Girls contact form" href="contact.php">contact form</a>.</p><br>
+
+            <div class="shareaholic-canvas" data-app="share_buttons" data-app-id="21375593"></div>
+        </div>
+    </div>
+
+</div>
