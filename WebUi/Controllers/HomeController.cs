@@ -56,10 +56,22 @@ namespace WebUi.Controllers
                 return RedirectPermanent("https://www.vegasmassagegirls.com/happy-ending-massage.php");
             if (baseUrl.Contains("inroom.vegasmassagegirls.com"))
                 return RedirectPermanent("https://www.vegasmassagegirls.com/inroom-massage.php");
-            if (baseUrl.Contains("tantra.vegasmassagegirls.com"))
-                return RedirectPermanent("https://www.vegasmassagegirls.com/tantra-massage.php");
+			if (baseUrl.Contains("tantra.vegasmassagegirls.com"))
+				return RedirectPermanent("https://www.vegasmassagegirls.com/tantra-massage.php");
+			if (baseUrl.Contains("nuru.vegasmassagegirls.com/fbsm-massage.php"))
+				return RedirectPermanent("https://www.vegasmassagegirls.com/fbsm-massage.php");
+			if (baseUrl.Contains("nuru.vegasmassagegirls.com"))
+				return RedirectPermanent("https://www.vegasmassagegirls.com/nuru-massage.php");
 
-            var m = new HomeViewModel();
+			/////////
+			//if (baseUrl.Contains("vegasmassagegirls.com/fbsm-massage.php"))
+			//    return RedirectPermanent("https://nuru.vegasmassagegirls.com/fbsm-massage.php");
+			//if (baseUrl.Contains("vegasmassagegirls.com/nuru-massage.php"))
+			//    return RedirectPermanent("https://nuru.vegasmassagegirls.com/");
+			/////////
+
+
+			var m = new HomeViewModel();
             var escorts = await GetAllEscorts();
             foreach (var p in escorts)
             {
@@ -156,6 +168,7 @@ namespace WebUi.Controllers
             return View(m);
         }
 
+
 #if !DEBUG
         [ResponseCache(Duration = 3600, Location = ResponseCacheLocation.Any, NoStore = false)]
 #endif
@@ -185,6 +198,15 @@ namespace WebUi.Controllers
             var massageName = string.Empty;
             switch (name)
             {
+                case "fbsm-massage":
+                    foreach (var r in escorts.Select(p => rnd.Next(escorts.Count - 1)))
+                    {
+                        list.Add(escorts[r]);
+                        if (list.Count == 12) break;
+                    }
+                    list = list.DistinctBy(z => z.EscortName).Take(8).ToList();
+                    massageName = "FBSM";
+                    break;
                 case "asian":
                     foreach (var r in escorts.Select(p => rnd.Next(escorts.Count - 1)))
                     {
@@ -448,6 +470,7 @@ namespace WebUi.Controllers
             });
 
             if (
+                name == "fbsm-massage.php" ||
                 name == "korean.php" ||
                 name == "asian.php" ||
                 name == "outcall-massage.php" ||

@@ -370,8 +370,8 @@
         //https://www.vegasmassagegirls.com/
         public const string SiteNameSsl = "www.vegasmassagegirls.com";
         public const string SiteName = "www.vegasmassagegirls.com";
-        public const string SitePhone = "(702) 766-7988";
-        public const string SitePhoneRef = "+17027667988";
+        public const string SitePhone = "(702) 323-8818";
+        public const string SitePhoneRef = "+17023238818";
         public const string SiteEmail = "info@vegasmassagegirls.com";
         public const string SiteContentLocation = "Las Vegas";
         public const string SiteCountry = "USA";

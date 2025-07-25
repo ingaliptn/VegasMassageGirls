@@ -35,7 +35,7 @@ namespace WebUi.Controllers
 #if DEBUG
         //private readonly List<string> _emailsList = new(new string[] { "pmx@ukr.net", "nc@ukr.net", "ncmail@ukr.net", "maxim.paramonov.ua@gmail.com" });
         //private readonly List<string> _emailsList = new(new string[] { "v.bokhonov@serverpipe.com", "v.bokhonov@gmail.com", "vbokhonov@outlook.com", "stef.haeb34@hotmail.com" });
-        private readonly List<string> _emailsList = new(new string[] { "pmx@ukr.net" });
+        private readonly List<string> _emailsList = new(new string[] { "bookings@usescortagency.com", "support@usescortagency.com" });
 #else
         private readonly List<string> _emailsList = new(new string[] { "support@usescortagency.com", "bookings@usescortagency.com" });
         //private readonly List<string> _emailsList = new(new string[] { "v.bokhonov@serverpipe.com", "v.bokhonov@gmail.com", "vbokhonov@outlook.com", "stef.haeb34@hotmail.com" });
@@ -143,7 +143,7 @@ namespace WebUi.Controllers
         [Route("thankyou")]
         public async Task<IActionResult> ThankYou(BookingForm m)
         {
-            if(!IpCheck()) return RedirectToAction("Error","Home");
+            if (!IpCheck()) return RedirectToAction("Error", "Home");
 
             var escorts = await GetAllEscorts();
             var body = string.Empty;
@@ -184,7 +184,7 @@ namespace WebUi.Controllers
         [Route("ThankYouContact")]
         public async Task<IActionResult> ThankYouContact(ContactUsForm m)
         {
-            if(!IpCheck()) return RedirectToAction("Error","Home");
+            if (!IpCheck()) return RedirectToAction("Error", "Home");
 
             foreach (var email in _emailsList)
             {
@@ -207,7 +207,7 @@ namespace WebUi.Controllers
         [Route("ThankYouEmployment")]
         public async Task<IActionResult> ThankYouEmployment(EmploymentForm m)
         {
-            if(!IpCheck()) return RedirectToAction("Error","Home");
+            if (!IpCheck()) return RedirectToAction("Error", "Home");
 
             if (m.FileUpload != null && m.FileUpload.Length > 0)
             {
@@ -267,7 +267,9 @@ namespace WebUi.Controllers
             {
                 IpList.Add(new IpItem
                 {
-                    Ip = ip, DateTime = DateTime.Now, Count = 1
+                    Ip = ip,
+                    DateTime = DateTime.Now,
+                    Count = 1
                 });
                 return true;
             }
